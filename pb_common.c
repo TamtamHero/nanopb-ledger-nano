@@ -4,7 +4,12 @@
  */
 
 #include "pb_common.h"
+
+#ifdef OS_IO_SEPROXYHAL
 #include "os.h"
+#else
+#define PIC(x) x
+#endif
 
 bool pb_field_iter_begin(pb_field_iter_t *iter, const pb_field_t *fields, void *dest_struct)
 {

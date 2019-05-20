@@ -12,7 +12,13 @@
 #else
     #define checkreturn __attribute__((warn_unused_result))
 #endif
+
+#ifdef OS_IO_SEPROXYHAL
 #include "os.h"
+#else
+#define PIC(x) x
+#endif
+
 #include "pb.h"
 #include "pb_decode.h"
 #include "pb_common.h"
